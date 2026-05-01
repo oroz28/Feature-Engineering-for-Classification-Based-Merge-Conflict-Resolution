@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 def get_model(model_type):
     if model_type == 'rf':
-        return RandomForestClassifier(n_estimators=400, criterion='entropy', max_features='sqrt', min_samples_leaf=1, random_state=42)
+        return RandomForestClassifier(n_estimators=400, criterion='entropy', max_features=0.3, min_samples_leaf=1, random_state=42, n_jobs=-1)
     elif model_type == 'lr':
         return LogisticRegression(max_iter=1000, class_weight='balanced', random_state=42)
     elif model_type == 'svm':
