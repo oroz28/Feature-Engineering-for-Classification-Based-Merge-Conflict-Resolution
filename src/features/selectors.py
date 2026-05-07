@@ -94,19 +94,15 @@ def get_selected_feature_names(selector, feature_names, method):
     Utility to extract selected feature names from the selector object based on the method used.
     """
     if method in ('chi2', 'mutual_info'):
-        # SelectKBest: get_support() returns boolean mask
         return list(np.array(feature_names)[selector.get_support()])
 
     elif method == 'rfe':
-        # RFE: support_ is boolean mask
         return list(np.array(feature_names)[selector.support_])
 
     elif method == 'rf_importance':
-        # our custom dict
         return selector['feature_names']
 
     elif method == 'pca':
-        # PCA doesn't select features, it creates components. Return component names.
         return feature_names
 
     else:
