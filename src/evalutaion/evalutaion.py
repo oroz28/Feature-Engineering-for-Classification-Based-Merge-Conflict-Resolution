@@ -1,11 +1,3 @@
-""" 
-evaluation.py:
-Evaluation module for classification-based merge conflict resolution.
-Implements per-project 5-fold StratifiedGroupKFold CV to prevent data leakage across splits
-(merges are grouped by merge_id). Evaluates multiple feature selection methods and models,
-and collects feature selection frequencies and Jaccard stability for post-hoc analysis.
-"""
-
 import numpy as np
 import pandas as pd
 from itertools import combinations

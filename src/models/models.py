@@ -18,8 +18,10 @@ def get_model(model_type):
         return RandomForestClassifier(n_estimators=400, criterion='entropy', max_features=0.3, min_samples_leaf=1, random_state=42, n_jobs=-1)
     elif model_type == 'lr':
         return LogisticRegression(max_iter=10000, class_weight='balanced', random_state=42)
+    # not used
     elif model_type == 'svm':
         return SVC(kernel='rbf', class_weight='balanced', random_state=42)
+    # not used
     elif model_type == 'knn':
         return KNeighborsClassifier(n_neighbors=5)
     elif model_type == 'dt':

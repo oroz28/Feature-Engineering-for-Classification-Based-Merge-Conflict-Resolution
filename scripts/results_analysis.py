@@ -384,25 +384,7 @@ def run_pca_variance_analysis(model, save):
     return result
 
 
-# 8. Polynomial feature count analysis
-def polynomial_feature_count_analysis():
-    """
-    Shows how many features polynomial expansion generates for different k values.
-    With interaction_only = True, degree = 2: k + C(k, 2) = k + k*(k-1)/2 features.
-    Justifies why we only apply polynomial on a pre-selected small subset.
-    """
-    from sklearn.preprocessing import PolynomialFeatures
-
-    print("\n--- Polynomial Feature Expansion (degree=2, interaction_only=True) ---")
-    print(f"  {'k (input)':>10} | {'output features':>15}")
-    print("  " + "-" * 28)
-    for k in [5, 10, 15, 20, 30, 43]:
-        n_out = k + k * (k - 1) // 2
-        print(f"  {k:>10} | {n_out:>15}")
-    print("\n  Recommendation: apply polynomial only after selecting k<=15 features.")
-
-
-# 9. Optimal subset recommendation
+# 8. Optimal subset recommendation
 def recommend_optimal_subset(summary, freqs, stable_threshold=0.8, corr_threshold=0.85):
     """
     Recommends an optimal feature subset based on performance, stability, and redundancy.
@@ -444,7 +426,7 @@ def recommend_optimal_subset(summary, freqs, stable_threshold=0.8, corr_threshol
         "n_recommended": len(final_features),
     }
 
-# 10. Statistical significance testing (Wilcoxon signed-rank test)
+# 9. Statistical significance testing (Wilcoxon signed-rank test)
 
 
 def run_wilcoxon_tests(model):
