@@ -1,3 +1,11 @@
+""" 
+preprocessing.py:
+Module for data loading and preprocessing in classification-based merge conflict resolution.
+Includes functions for loading data, filtering projects based on sample size, creating label columns, and removing
+leakage features. This ensures that the dataset is clean and ready for feature selection and model training, 
+while also preventing data leakage that could bias the evaluation results.
+"""
+
 import pandas as pd
 
 def load_data(file_path):
